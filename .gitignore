@@ -1,0 +1,9 @@
+.idea
+node_modules
+.env
+build
+dist
+uploads
+ai/__pycache__/
+yarn-error.log
+.DS_Store
