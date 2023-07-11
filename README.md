@@ -5,12 +5,7 @@ Aigen's open-source tools to create AINFTs effortlessly
 </h3>
 </div>
 
-## deploy AINFTToken smart contract
-The smart contract can be found at contracts->AINFTToken.sol
-Using Remix IDE, deploy the smart contract to the local Ganache or Goerli testnet. 
-It is recommended that you test the smart contract before deploying it to the mainnet.
-
-## create environment variables
+### create environment variables
 
 #### create a .env file and put these variables
 
@@ -23,7 +18,25 @@ NFTSTORAGE_TOKEN=<NFTStorage Token>
 MODELS_DIR=/Users/apple/aigen
 ```
 
-## commands
+### compile & deploy AINFTToken.sol smart contract
+The smart contract can be found at contracts->AINFTToken.sol
+
+##### compile
+```
+npm run compileAINFTTokenContract
+```
+
+#### deploy
+```
+npm run deployAINFTTokenContract
+```
+this will automatically deploy the smart contract to 'PROVIDER_URL'
+
+Note:
+* Using Remix IDE, deploy the smart contract to the local Ganache or Goerli testnet.
+* It is recommended that you test the smart contract before deploying it to the mainnet.
+
+### commands
 
 #### install python dependencies
 
@@ -39,7 +52,7 @@ python main.py -n "Test" -m "<path-to-model.h5>" -no 20
 provide model name, model path and no of ainfts to create
 * For the time being, we only support Keras models
 
-## code
+### code
 
 ### extract and save model weights
 
@@ -78,6 +91,6 @@ this step will deploy files to NFTStorage and mint AINFTs
 
 ## License
 
-<a href="https://github.com/aigenprotocol/aigen/blob/master/LICENSE"><img src="https://img.shields.io/github/license/aigenprotocol/aigen"></a>
+<a href="https://github.com/aigenprotocol/aigen/blob/master/LICENSE.rst"><img src="https://img.shields.io/github/license/aigenprotocol/aigen"></a>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.rst) file for details

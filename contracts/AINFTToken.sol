@@ -3,11 +3,10 @@ pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract AINFTToken is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
+contract AINFTToken is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
@@ -22,6 +21,7 @@ contract AINFTToken is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
     }
 
     // The following functions are overrides required by Solidity.
+
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }
@@ -33,5 +33,14 @@ contract AINFTToken is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
     returns (string memory)
     {
         return super.tokenURI(tokenId);
+    }
+
+    function supportsInterface(bytes4 interfaceId)
+    public
+    view
+    override(ERC721, ERC721URIStorage)
+    returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
     }
 }

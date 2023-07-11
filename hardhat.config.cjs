@@ -1,5 +1,7 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 
+const {PRIVATE_KEY} = require("./web3/config.js");
+
 module.exports = {
   defaultNetwork: 'ganache',
   networks: {
@@ -9,7 +11,7 @@ module.exports = {
     }
   },
   solidity: {
-    version: "0.8.7",
+    version: "0.8.20",
     settings: {
       optimizer: {
         enabled: false,

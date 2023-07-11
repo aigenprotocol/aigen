@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ainft": "node web3/ainft.js --action=$"
+    "ainft": "node web3/ainft.js --action=$",
+    "compileAINFTTokenContract": "node web3/CompileAINFTTokenContract.js",
+    "deployAINFTTokenContract": "node web3/DeployAINFTTokenContract.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "ethereumjs-wallet": "^1.0.2",
     "hardhat": "^2.16.1",
     "nft.storage": "^7.1.0",
+    "solc": "0.8.15",
     "web3": "^4.0.2"
   }
 }
