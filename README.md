@@ -78,6 +78,6 @@ this step will deploy files to NFTStorage and mint AINFTs
 
 ## License
 
-<a href="https://github.com/aigenprotocol/aigen/blob/master/LICENSE"><img src="https://img.shields.io/github/license/aigenprotocol/aigen"></a>
+<a href="LICENSE.rst"><img src="https://img.shields.io/github/license/aigenprotocol/aigen"></a>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.rst) file for details
