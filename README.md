@@ -89,6 +89,14 @@ npm run ainft --action="createAINFT" --model_name="Test" --model_dir="/Users/app
 ```
 this step will deploy files to NFTStorage and mint AINFTs
 
+
+### download AINFTs
+
+```
+npm run ainft --action=downloadAINFT --model_name=test --model_dir="/Users/apple/aigen/test"
+```
+this will automatically download and decrypt content of AINFTs
+
 ## License
 
 <a href="LICENSE.rst"><img src="https://img.shields.io/github/license/aigenprotocol/aigen"></a>

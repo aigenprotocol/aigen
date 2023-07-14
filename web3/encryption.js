@@ -1,7 +1,8 @@
 import crypto from "crypto";
-import {encrypt, getEncryptionPublicKey, decrypt} from "@metamask/eth-sig-util";
+import {encrypt, getEncryptionPublicKey} from "@metamask/eth-sig-util";
 import {bufferToHex, toBuffer} from "ethereumjs-util";
 import {PRIVATE_KEY} from "./config.js";
+import {decrypt} from "eth-sig-util";
 
 export function generateKey() {
     //return crypto.pbkdf2Sync('my password', crypto.randomBytes(16), 100000, 256/8, 'sha256');
@@ -50,7 +51,7 @@ export function decryptDataAES(data, key, iv) {
 
     decryptedData += decipher.final("utf8");
 
-    console.log("Encrypted data:", decryptedData);
+    //console.log("Decrypted data:", decryptedData);
 
     return decryptedData
 }
