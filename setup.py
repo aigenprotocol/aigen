@@ -19,6 +19,7 @@ setup(
     keywords="Aigen, open-source, AINFT, effortlessly",
     install_requires=[
         "python-dotenv",
-        "tensorflow==2.11.0"
+        "tensorflow==2.13.0",
+        "pandas"
     ]
 )

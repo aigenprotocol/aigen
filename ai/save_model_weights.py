@@ -1,8 +1,7 @@
 import json
-import os
-
 import numpy as np
-import keras.saving.legacy.save
+import os
+from tensorflow import keras
 
 
 def clean_dict_helper(d):

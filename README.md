@@ -97,6 +97,13 @@ npm run ainft --action=downloadAINFT --model_name=test --model_dir="/Users/apple
 ```
 this will automatically download and decrypt content of AINFTs
 
+### merge model shards
+
+```
+python merge_shards.py --name test
+```
+this will automatically merge shards back to recover the original weight files
+
 ## License
 
 <a href="LICENSE.rst"><img src="https://img.shields.io/github/license/aigenprotocol/aigen"></a>
