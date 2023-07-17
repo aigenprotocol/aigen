@@ -36,6 +36,8 @@ def save_model_weights(model_name, model_dir, model):
     # Create directories if they don't exist
     os.makedirs(f"{model_dir}/{model_name}/weights", exist_ok=True)
 
+    layer_index = 1
+
     for name, parameter in model.named_parameters():
         if 'weight' in name:
             layer_name = name.split('.')[0]
@@ -50,6 +52,9 @@ def save_model_weights(model_name, model_dir, model):
 
             weight_format['weights'] = all_weights
 
-            with open(f"{model_dir}/{model_name}/weights/{layer_name}.json", "w") as f:
+            with open(f"{model_dir}/{model_name}/weights/layer{layer_index}.json", "w") as f:
                 json.dump([weight_format], f)
+
+            layer_index += 1
+
 
