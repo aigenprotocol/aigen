@@ -1,4 +1,5 @@
 import glob
+import numpy as np
 import os
 import re
 import unicodedata
@@ -28,3 +29,20 @@ def slugify(value, allow_unicode=False):
         value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
     value = re.sub(r'[^\w\s-]', '', value.lower())
     return re.sub(r'[-\s]+', '-', value).strip('-_')
+
+
+def compare_model_weights_keras(model, model1):
+    """
+    Compare model weights for keras models
+    """
+    for layer in model.layers:
+        print("Layer:", layer.name)
+        for index, weight in enumerate(layer.weights):
+            weight1 = model1.get_layer(layer.name).get_weights()[index]
+            if np.array_equal(weight, weight1):
+                pass
+            else:
+                print("Not equal")
+                return False
+
+    return True
