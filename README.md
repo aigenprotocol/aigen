@@ -47,7 +47,7 @@ pip install -r requirements
 #### extract model weights and create shards in a single command
 
 ```
-python main.py -n "Test" -m "<path-to-model.h5>" -no 20
+python main.py --action "create_shards" -n "test" -m "<path-to-model.h5>" -no 20
 ```
 provide model name, model path and no of ainfts to create
 * For the time being, we only support Keras models
@@ -97,12 +97,22 @@ npm run ainft --action=downloadAINFT --model_name=test --model_dir="/Users/apple
 ```
 this will automatically download and decrypt content of AINFTs
 
+
 ### merge model shards
 
 ```
-python merge_shards.py --name test
+python main.py --action "merge_shards" --name test
 ```
-this will automatically merge shards back to recover the original weight files
+this will merge shards back to recover the original weight files
+
+
+### load model (keras)
+
+```
+python main.py --action "load_model" --name test
+```
+this will load model from merged shards
+
 
 ## License
 
